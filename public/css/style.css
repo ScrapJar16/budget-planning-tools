@@ -3,6 +3,15 @@
     background-color: #E8DCA2;
 }
 
+a {
+    color: #43622B;
+}
+
+h1 {
+    text-shadow: 3px 3px 5px #ECBA3D;
+    font-size: 3rem;
+}
+
 .header {
     border: 3px solid #000;
     border-radius: 15px;
@@ -12,7 +21,7 @@
 .header-box {
     background-color: #436228;
     gap: 0.5rem;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
     border-radius: 12px 12px 0px 0px;
     flex-flow: row;
@@ -35,7 +44,7 @@
     border-radius: 0px 0px 12px 12px;
     gap: 1rem;
     background-color: #fde581;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .content-container{
