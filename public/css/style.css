@@ -29,6 +29,10 @@ h1 {
     align-items: center;
 }
 
+#branded-title-heading {
+    font-family: "./../.../fonts/CinzelDecorative-Regular.ttf";
+}
+
 .header-logo{
     background-image: "./budget-goat-circle.png";
     box-shadow: 5px 5px 15px #000;
@@ -100,6 +104,24 @@ h1 {
     box-shadow: 3px 3px 8px #000;
 }
 
+.input-output-grouping {
+    border: 0px;
+    display: flex;
+    flex-flow: column;
+}
+
+.form-header {
+    border: 3px solid #ECBA3D;
+    background-color: #99B927;
+    box-shadow: 3px 3px 8px #000;
+    border-radius: 15px;
+    padding: 0.3rem 0.5rem;
+    align-self: center;
+    text-align: center;
+    max-width: 25%;
+    margin-bottom: 0;
+}
+
 .input-box {
     position: absolute;
     right: 0.5rem;
@@ -110,6 +132,7 @@ h1 {
     flex-flow: row;
     align-items: center;
     justify-content: center;
+    margin: 1.5rem;
     gap: 0.5rem;
 }
 

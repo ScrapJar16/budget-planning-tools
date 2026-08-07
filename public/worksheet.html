@@ -11,7 +11,7 @@
         <main class="main">
             <header class="header">
                 <article class="header-box">
-                    <h1>Budget Goat</h1>
+                    <h1 id="branded-title-heading">Budget Goat</h1>
                     <p></p>
                     <img src="img/budget-goat-circle.png" width="100" height="100" class="header-logo">
                 </article>
@@ -39,129 +39,184 @@
                 </section>  
                 <section class="form-container">
                     <form class="form">
-                        <fieldset class="form-section">
-                            <legend class="form-section-title">This Month</legend>
-                            <label>This Month</label>
-                            <input type="text" value="Ex: March" class="input-box"><br>
-                            <label>This Year</label>
-                            <input type="number" value="2026" class="input-box"><br>
-                        </fieldset>
-                        <fieldset class="form-section">
-                            <legend class="form-section-title">Income</legend>
-                            <label>Wages After Taxes</label>
-                            <input type="number" value="0" class="input-box"><br>
-                            <label>Other Income (child support, benefit payments, rental income, etc.)</label><br>
-                            <input type="number" value="0" class="input-box"><br>
-                        </fieldset>
-                        <fieldset class="form-section">
-                            <legend class="form-section-title">Expenses</legend>
+                        <section class="input-output-grouping">
+                            <h2 class="form-header">Inputs</h2>
                             <fieldset class="form-section">
-                                <legend class="form-section-title">Housing</legend>
-                                <label>Rent/Mortgage</label>
+                                <legend class="form-section-title">This Month</legend>
+                                <label>This Month</label>
+                                <input type="text" value="Ex: March" class="input-box"><br>
+                                <label>This Year</label>
+                                <input type="number" value="2026" class="input-box"><br>
+                            </fieldset>
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Income</legend>
+                                <label>Wages After Taxes</label>
                                 <input type="number" value="0" class="input-box"><br>
-                                <label>Insurance (renters/homeowners)</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label class="long-text">Utilities (like electricity, gas, water, etc.)</label><br>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Internet/Phone</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Other Housing Expenses</label>
+                                <label>Other Income (child support, benefit payments, rental income, etc.)</label><br>
                                 <input type="number" value="0" class="input-box"><br>
                             </fieldset>
                             <fieldset class="form-section">
-                                <legend class="form-section-title">Food & Cleaning</legend>
-                                <label>Groceries and household supplies</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Eating out/food delivery</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Other food expenses</label>
-                                <input type="number" value="0" class="input-box"><br>
+                                <legend class="form-section-title">Expenses</legend>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Housing</legend>
+                                    <label>Rent/Mortgage</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Insurance (renters/homeowners)</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label class="long-text">Utilities (like electricity, gas, water, etc.)</label><br>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Internet/Phone</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Other Housing Expenses</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                </fieldset>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Food & Cleaning</legend>
+                                    <label>Groceries and household supplies</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Eating out/food delivery</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Other food expenses</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                </fieldset>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Transportation</legend>
+                                    <label>Public Transportation</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Taxis/rideshares</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Gas for car</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Parking/toll fees</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Car maintenance (like oil changes)</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Car insurance</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Car payment</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Other transportation expenses</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                </fieldset>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Health</legend>
+                                    <label>Health Insurance</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Prescritions</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Co-pays for doctor's appointments</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Other health expenses</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                </fieldset>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Personal, family maintenece, & lifestyle</legend>
+                                    <label>Childcare (daycare, babysitting, etc.)</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Child support you pay</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Money you send to family</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Clothing and shoes</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Gym/fitness memberships</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Pets</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Entertainment (like subscriptions, movies, concerts, etc.)</label><br>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Travel</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Other personal and family expenses (like donations, laundry, haircuts,etc.)</label><br>
+                                    <input type="number" value="0" class="input-box"><br>
+                                </fieldset>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Education & Professional</legend>
+                                    <label>Student Loans</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Tuition Payments</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Books and Supplies</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Professional memebership fees</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                </fieldset>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Financial Health & Other Expenses</legend>
+                                    <label>Bank account/credit card fees</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Credit carsd or other debt payments</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Savings deposits</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Investment contributions</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                    <label>Other expenses this month</label>
+                                    <input type="number" value="0" class="input-box"><br>
+                                </fieldset>
                             </fieldset>
-                            <fieldset class="form-section">
-                                <legend class="form-section-title">Transportation</legend>
-                                <label>Public Transportation</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Taxis/rideshares</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Gas for car</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Parking/toll fees</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Car maintenance (like oil changes)</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Car insurance</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Car payment</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Other transportation expenses</label>
-                                <input type="number" value="0" class="input-box"><br>
-                            </fieldset>
-                            <fieldset class="form-section">
-                                <legend class="form-section-title">Health</legend>
-                                <label>Health Insurance</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Prescritions</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Co-pays for doctor's appointments</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Other health expenses</label>
-                                <input type="number" value="0" class="input-box"><br>
-                            </fieldset>
-                            <fieldset class="form-section">
-                                <legend class="form-section-title">Personal, family maintenece, and lifestyle</legend>
-                                <label>Childcare (daycare, babysitting, etc.)</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Child support you pay</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Money you send to family</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Clothing and shoes</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Gym/fitness memberships</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Pets</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Entertainment (like subscriptions, movies, concerts, etc.)</label><br>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Travel</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Other personal and family expenses (like donations, laundry, haircuts,etc.)</label><br>
-                                <input type="number" value="0" class="input-box"><br>
-                            </fieldset>
-                            <fieldset class="form-section">
-                                <legend class="form-section-title">Education & Professional</legend>
-                                <label>Student Loans</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Tuition Payments</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Books and Supplies</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Professional memebership fees</label>
-                                <input type="number" value="0" class="input-box"><br>
-                            </fieldset>
-                            <fieldset class="form-section">
-                                <legend class="form-section-title">Financial Health and Other Expenses</legend>
-                                <label>Bank account/credit card fees</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Credit carsd or other debt payments</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Savings deposits</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Investment contributions</label>
-                                <input type="number" value="0" class="input-box"><br>
-                                <label>Other expenses this month</label>
-                                <input type="number" value="0" class="input-box"><br>
-                            </fieldset>
-                        </fieldset>
+                        </section>
                         <section class="button-box">
-                            <input type="submit" value="Calculate" class="button">
+                            <!-- <input type="submit" value="Calculate" class="button"> -->
                             <input type="reset" value="Reset Inputs" class="button">
+                        </section>
+                        <section class="input-output-grouping">
+                            <h2 class="form-header">Outputs</h2>
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Summary</legend>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Category Totals</legend>
+                                    <label ><b>Income Total</b></label>
+                                    <output></output><br>
+                                    <label>Housing</label>
+                                    <output></output><br>
+                                    <label>Food & Cleaning</label>
+                                    <output></output><br>
+                                    <label>Transportation</label>
+                                    <output></output><br>
+                                    <label>Health</label>
+                                    <output></output><br>
+                                    <label>Personal, Family, & Lifestyle</label>
+                                    <output></output><br>
+                                    <label>Education & Professional</label>
+                                    <output></output><br>
+                                    <label>Financial Health & Other Expenses</label>
+                                    <output></output><br>
+                                    <label><b>Expenses Total</b></label>
+                                    <output></output>
+                                </fieldset>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Overall Total</legend>
+                                    <label>Income</label><output></output> - 
+                                    <label>Expenses</label><output></output> = 
+                                    <label>Difference</label><output></output>
+                                </fieldset>
+                                <fieldset class="form-section">
+                                    <legend class="form-section-title">Things to Consider</legend>
+                                    <section>
+                                        <p>
+                                            Ideally, you will want an idea of your budget from month to month. 
+                                            Continue tracking for several months to see how your spending habits change.
+                                            Think about major events or purchases throughout the year and how they might affect your budget.
+                                            For example, you might need to plan for new shoes or clothes before a new school year starts or have extra funds set aside for holiday gifts.
+                                            Consider adjusting individual categorys to account for these changes.
+                                            One option to cover these variable or intermittant expenses is to plan for an annual total, divide that total by 12 (or less depending on your timeline)
+                                                and then use that number in your monthly budget to set aside savings throughout the year.
+                                            This will help ensure you will have funds to cover those expenses when you need them.
+                                        </p>
+                                        <p>
+                                            Something here about how recommendations are to keep your housing expenses within a certian percentage of income.
+                                            Maybe a way to flag if their totals are above that, but save that rabbit hole for later!
+                                        </p>
+                                    </section>
+                                </fieldset>
+                            </fieldset>
                         </section>
                     </form>
                 </section>
             </article>
             <footer class="footer">
-                <p>Footer</p>
+                <!-- <p>Footer</p> -->
                 <p><img src="img/budget-goat-logo-words.png" width="100" height="100" class="footer-logo"></p>
             </footer>
         </main>
