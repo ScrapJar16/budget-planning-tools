@@ -1,3 +1,20 @@
+//to do (vaguely sorted by intended order of opperations)
+
+//get the inputs from the html form and put them into the arrays
+//get the results of the math and put them back in the outputs section
+//go read more abou this https://www.w3schools.com/html/html5_webworkers.asp and figure out if it would fulfil the requirement
+    //mentor feedback would be especially helpful about this^^
+//go actually do a media query for mobile responsiveness
+    //the labels need to wrap to a different line because right now they are obscured in a smaller viewing window
+        //something something max width + wrapping?? figure it out Do I need <p>s?
+//add a readme
+//make sure all the pages have real text instead of placeholders
+//make sure the form validates user input/double check if I've already done that??
+    //reevaluate the buttons
+//finish making it pretty/figure out random minor issues if there is time
+    //figure out how to make the webpage header use the 
+    //why isn't the image reference in the stylesheet working but the inline html is??
+    //make the buttons grey
 
 //li = line item
 
@@ -26,12 +43,12 @@ function sumCategory() {
 
 function add() {
     //a+b=sum
-    // seems like it might be helpful to have a version that doesn't involve an array necessarily??? idk
+    //seems like it might be helpful to have a version that doesn't involve an array necessarily??? idk
 };
 
 function subtract() {
     //a-d=difference
-    // go check how to do this
+    //go check how to do this
 };
 
 let totalWages = sumCategory(liWages);
@@ -45,4 +62,5 @@ let totalHealth = sumCategory(liHealth);
 let totalLifestyle = sumCategory(liEducation);
 let totalFinancial = sumCategory(liFinancial);
 let totalExpenses = sumCategory(expenses);
+
 
