@@ -23,7 +23,7 @@ const liIncomeOther = [];
 
 const income = [liWages,liIncomeOther];
 
-const liHousing = [];
+const liHousing = [5, 8, 10];
 const liFood = [];
 const liTranspo = [];
 const liHealth = [];
@@ -33,13 +33,21 @@ const liFinancial = [];
 
 const expenses = [liHousing, liFood, liTranspo, liHealth, liLifestyle, liEducation, liFinancial];
 
-function sumCategory() {
+function sumArray(array) {
+    let sum = 0;
+    for (i = 0; i < array.length; i++) {
+        //error to make sure the array is a number
+        sum = sum + array[i];
+    };
+    return sum;
     //the line items that fall within certain categories go into an array for the category
     //this would provide the sum total of the array for a category
     //Hopefully one day I will come back and add more detailed line item options
     //and hopefully this will reduce how much I need to revise formulas in the future. We'll see???
     //go look up how to find the sum of an array
 };
+
+sumArray(liHousing);
 
 function add() {
     //a+b=sum
