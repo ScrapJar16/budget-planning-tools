@@ -12,115 +12,154 @@
 
     //li = line item
 
-const liWages = [];
-const liIncomeOther = [];
+// const liWages = [];
+// const liIncomeOther = [];
 
-const income = [liWages,liIncomeOther];
+// const income = [liWages,liIncomeOther];
 
-const liHousing = [];
-const liFood = [];
-const liTranspo = [];
-const liHealth = [];
-const liLifestyle = [];
-const liEducation = [];
-const liFinancial = [];
+// const liHousing = [];
+// const liFood = [];
+// const liTranspo = [];
+// const liHealth = [];
+// const liLifestyle = [];
+// const liEducation = [];
+// const liFinancial = [];
 
-const expenses = [liHousing, liFood, liTranspo, liHealth, liLifestyle, liEducation, liFinancial];
+// const expenses = [liHousing, liFood, liTranspo, liHealth, liLifestyle, liEducation, liFinancial];
 
-function sumArray(array) {
-    let sum = 0;
-    for (i = 0; i < array.length; i++) {
-        //error to make sure the array is a number
-        sum = sum + array[i];
-    };
-    return sum;
-    //the line items that fall within certain categories go into an array for the category
-    //this would provide the sum total of the array for a category
-    //Hopefully one day I will come back and add more detailed line item options
-    //and hopefully this will reduce how much I need to revise formulas in the future. We'll see???
-    //go look up how to find the sum of an array
+// function sumArray(array) {
+//     let sum = 0;
+//     for (i = 0; i < array.length; i++) {
+//         //error to make sure the array is a number
+//         sum = sum + array[i];
+//     };
+//     return sum;
+//     //the line items that fall within certain categories go into an array for the category
+//     //this would provide the sum total of the array for a category
+//     //Hopefully one day I will come back and add more detailed line item options
+//     //and hopefully this will reduce how much I need to revise formulas in the future. We'll see???
+//     //go look up how to find the sum of an array
+// };
+
+// sumArray(liHousing);
+
+// function add() {
+//     //a+b=sum
+//     //seems like it might be helpful to have a version that doesn't involve an array necessarily??? idk
+// };
+
+// function subtract() {
+//     //a-d=difference
+//     //go check how to do this
+// };
+
+// let totalWages = sumArray(liWages);
+// let totalIncomeOther = sumArray(liIncomeOther)
+// let totalIncome = sumArray(income);
+
+// let totalHousing = sumArray(liHousing);
+// let totalFood = sumArray(liTranspo);
+// let totalTranspo = sumArray(liHealth);
+// let totalHealth = sumArray(liHealth);
+// let totalLifestyle = sumArray(liEducation);
+// let totalFinancial = sumArray(liFinancial);
+// let totalExpenses = sumArray(expenses);
+
+// ******************NEW CODE MICHAEL*************************
+//user goes to wages after taxes field and enters a number
+//the number goes into a storage thing so I can do math later
+//(wages after taxes) + (other income) = income total (in the output form section)
+
+//income subcategory method
+const form = document.getElementById("input-form");
+const inWages = form.elements["in-wages"];
+const inOther = form.elements["in-other"];
+const totalIncome = form.elements["out-income-summary"];
+
+function updateResult() {
+  const wageValue = inWages.valueAsNumber;
+  const otherIncomeValue = inOther.valueAsNumber;
+  totalIncome.value = wageValue + otherIncomeValue;
 };
 
-sumArray(liHousing);
+form.addEventListener("out-income-summary", updateResult);
 
-function add() {
-    //a+b=sum
-    //seems like it might be helpful to have a version that doesn't involve an array necessarily??? idk
+updateResult();
+
+//Housing 
+const inRent = form.elements["in-house-rent-mort"];
+const inInsurance = form.elements["in-house-insur"];
+const inUtilities = form.elements["in-house-util"]
+const inInternet = form.elements["in-house-comms"]
+const inHouseOther = form.elements["in-house-other"]
+
+const totalHousingExpenses = form.elements["out-house-total"];
+
+function updateResultHousing() {
+  const rentMortValue = inRent.valueAsNumber;
+  const houseInsuranceValue = inInsurance.valueAsNumber;
+  const utilitiesValue = inUtilities.valueAsNumber;
+  const commsValue = inInternet.valueAsNumber;
+  const houseOtherValue = inHouseOther.valueAsNumber;
+
+  totalHousingExpenses.value = rentMortValue + houseInsuranceValue + utilitiesValue + commsValue + houseOtherValue;
 };
 
-function subtract() {
-    //a-d=difference
-    //go check how to do this
+form.addEventListener("out-house-total", updateResultHousing);
+
+updateResultHousing();
+// Food options
+const inGroceries = form.elements["in-food-groceries"];
+const inResturants = form.elements["in-food-resturant"];
+const inFoodOther = form.elements["in-food-other"];
+
+const totalFoodExpenses = form.elements["out-food-total"];
+
+function updateResultFood() {
+    const groceriesValue = inGroceries.valueAsNumber;
+    const resturantValue = inResturants.valueAsNumber;
+    const foodOtherValue = inFoodOther.valueAsNumber;
+
+    totalFoodExpenses.value = groceriesValue + resturantValue + foodOtherValue;
 };
+form.addEventListener("out-food-total", updateResultFood);
 
-let totalWages = sumCategory(liWages);
-let totalIncomeOther = sumCategory(liIncomeOther)
-let totalIncome = sumCategory(income);
+updateResultFood();
 
-let totalHousing = sumCategory(liHousing);
-let totalFood = sumCategory(liTranspo);
-let totalTranspo = sumCategory(liHealth);
-let totalHealth = sumCategory(liHealth);
-let totalLifestyle = sumCategory(liEducation);
-let totalFinancial = sumCategory(liFinancial);
-let totalExpenses = sumCategory(expenses);
+// Transportation
+const inParking = form.elements["in-transpo-pub"];
+const inRides = form.elements["in-transpo-ride"];
+const inGas = form.elements["in-transpo-fuel"];
+const inCarMaint = form.elements["in-transpo-maint"]
+const inCarInsurance = form.elements["in-transpo-insur"];
+const inCarDebt = form.elements["in-transpo-debt"];
+const inCarOther = form.elements["in-transpo-other"];
 
+const totalTranspoExpenses = form.elements["out-transpo-total"];
 
+function updateResultTranspo() {
+    const parkingValue = inParking.valueAsNumber;
+    const ridesValue = inRides.valueAsNumber;
+    const gasValue = inGas.valueAsNumber;
+    const carMaintValue = inCarMaint.valueAsNumber;
+    const carInsuranceValue = inCarInsurance.valueAsNumber;
+    const carDebtValue = inCarDebt.valueAsNumber;
+    const carOtherValue = inCarOther.valueAsNumber;
 
-const form = document.getElementById('input-form');
-let formData = {};
-
-const calculatedBudget = {
-  calculatedIncome: 0,
-  otherCalulatedField: 12,
-  alsoCalculatedField: 34
-};
-
-const detuctExpenseHandler = (expense) => {
-  calculatedBudget.incomeAfterExpenses = calculatedBudget.incomeAfterExpenses - parseInt(expense);
+    totalTranspoExpenses.value = parkingValue + ridesValue + gasValue + carMaintValue + carInsuranceValue + carDebtValue + carOtherValue;
 }
+form.addEventListener("out-transpo-total", updateResultTranspo);
 
-const addSupplimentalIncomeHandler = (expense) => {
-  calculatedBudget.incomeAfterExpenses = calculatedBudget.incomeAfterExpenses + parseInt(expense);
-}
+updateResultTranspo();
 
-const dataHandler = (data) => {
-  calculatedBudget.incomeAfterExpenses = parseInt(data.wage_after_taxes);
-  
-  addSupplimentalIncomeHandler(data.supplimental_income);
-  detuctExpenseHandler(data.expense);
-  // otherHandler();
-  // otherHandler(); 
-  // etc
-  
-  return calculatedBudget;
-}
+// Health
 
-const populateResultOnPage = (calcBudget) => {
-  const resultDiv = document.getElementById('result');
-  resultDiv.innerText = ""; //ensure div is empty before adding stuff to it
-  
-  Object.keys(calcBudget).forEach((key) => {
-    const p = document.createElement('p');
-    p.innerText = `${key}: ${calcBudget[key]}`;
-    resultDiv.appendChild(p);
-  })
-}
+// Lifestyle
 
-form.addEventListener("submit", (e) => {
-  // Prevent the refresh of the page and/or the redirect that occurs on form submission
-  e.preventDefault();
+// Education
 
-  const data = new FormData(form);
-  
-  for (const [key,value] of data) {
-    // console.log(`Adding ${key} with value of ${value} to form data...`);
-    formData[key] = value;
-  }
-  
-  calcuatedResults = dataHandler(formData);
-  populateResultOnPage(calcuatedResults);
-  
-  // reset formData so continued operations don't get weird
-  formData = {};
-})
+// Financial
+
+
+//total Expenses
+

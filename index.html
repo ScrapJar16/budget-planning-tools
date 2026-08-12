@@ -41,19 +41,19 @@
                     <form id="input-form" class="form">
                         <section class="input-output-grouping">
                             <h2 class="form-header">Inputs</h2>
-                            <fieldset class="form-section">
+                            <!-- <fieldset class="form-section">
                                 <legend class="form-section-title">This Month</legend>
                                 <label>This Month</label>
                                 <input type="text" value="Ex: March" class="input-box" required><br>
                                 <label>This Year</label>
                                 <input type="number" value="2026" class="input-box" required><br>
-                            </fieldset>
+                            </fieldset> -->
                             <fieldset id="input-income" class="form-section">
                                 <legend class="form-section-title">Income</legend>
                                 <label>Wages After Taxes</label>
-                                <input type="number" value="0" class="input-box" required><br>
+                                <input type="number" id="in-wages" name="in-wages" value="0" class="input-box" required><br>
                                 <label>Other Income (child support, benefit payments, rental income, etc.)</label><br>
-                                <input type="number" value="0" class="input-box" required><br>
+                                <input type="number" id="in-other" name="in-other" value="0" class="input-box" required><br>
                             </fieldset>
                             <fieldset id="input-expenses" class="form-section">
                                 <legend class="form-section-title">Expenses</legend>
