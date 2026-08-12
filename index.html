@@ -38,121 +38,121 @@
                     </section>
                 </section>  
                 <section class="form-container">
-                    <form class="form">
+                    <form id="input-form" class="form">
                         <section class="input-output-grouping">
                             <h2 class="form-header">Inputs</h2>
                             <fieldset class="form-section">
                                 <legend class="form-section-title">This Month</legend>
                                 <label>This Month</label>
-                                <input type="text" value="Ex: March" class="input-box"><br>
+                                <input type="text" value="Ex: March" class="input-box" required><br>
                                 <label>This Year</label>
-                                <input type="number" value="2026" class="input-box"><br>
+                                <input type="number" value="2026" class="input-box" required><br>
                             </fieldset>
-                            <fieldset class="form-section">
+                            <fieldset id="input-income" class="form-section">
                                 <legend class="form-section-title">Income</legend>
                                 <label>Wages After Taxes</label>
-                                <input type="number" value="0" class="input-box"><br>
+                                <input type="number" value="0" class="input-box" required><br>
                                 <label>Other Income (child support, benefit payments, rental income, etc.)</label><br>
-                                <input type="number" value="0" class="input-box"><br>
+                                <input type="number" value="0" class="input-box" required><br>
                             </fieldset>
-                            <fieldset class="form-section">
+                            <fieldset id="input-expenses" class="form-section">
                                 <legend class="form-section-title">Expenses</legend>
-                                <fieldset class="form-section">
+                                <fieldset id="input=housing" class="form-section">
                                     <legend class="form-section-title">Housing</legend>
                                     <label>Rent/Mortgage</label>
-                                    <input type="number" value="0" class="input-box" id="in-house-rent-mort" name="in-house-rent-mort"><br>
+                                    <input type="number" value="0" class="input-box" id="in-house-rent-mort" name="in-house-rent-mort" min="0" required><br>
                                     <label>Insurance (renters/homeowners)</label>
-                                    <input type="number" value="0" class="input-box" id="in-house-insur" name="in-house-insur"><br>
-                                    <label class="long-text">Utilities (like electricity, gas, water, etc.)</label><br>
-                                    <input type="number" value="0" class="input-box" id="in-house-util" name="in-house-util"><br>
+                                    <input type="number" value="0" class="input-box" id="in-house-insur" name="in-house-insur" min="0" required><br>
+                                    <label>Utilities (like electricity, gas, water, etc.)</label><br>
+                                    <input type="number" value="0" class="input-box" id="in-house-util" name="in-house-util" min="0" required><br>
                                     <label>Internet/Phone</label>
-                                    <input type="number" value="0" class="input-box" id="in-house-comms" name="in-house-comms"><br>
+                                    <input type="number" value="0" class="input-box" id="in-house-comms" name="in-house-comms" min="0" required><br>
                                     <label>Other Housing Expenses</label>
-                                    <input type="number" value="0" class="input-box" id="in-house-other" name="in-house-other"><br>
+                                    <input type="number" value="0" class="input-box" id="in-house-other" name="in-house-other" min="0" required><br>
                                 </fieldset>
-                                <fieldset class="form-section">
+                                <fieldset id="input-food-cleaning" class="form-section input-section">
                                     <legend class="form-section-title">Food & Cleaning</legend>
                                     <label>Groceries and household supplies</label>
-                                    <input type="number" value="0" class="input-box" id="in-food-groceries" name="in-food-groceries"><br>
+                                    <input type="number" value="0" class="input-box" id="in-food-groceries" name="in-food-groceries" min="0" required><br>
                                     <label>Eating out/food delivery</label>
-                                    <input type="number" value="0" class="input-box" id="in-food-resturant" name="in-food-resturant"><br>
+                                    <input type="number" value="0" class="input-box" id="in-food-resturant" name="in-food-resturant" min="0" required><br>
                                     <label>Other food expenses</label>
-                                    <input type="number" value="0" class="input-box" id="in-food-other" name="in-food-other"><br>
+                                    <input type="number" value="0" class="input-box" id="in-food-other" name="in-food-other" min="0" required><br>
                                 </fieldset>
-                                <fieldset class="form-section">
-                                    <legend class="form-section-title">Transportation</legend>
+                                <fieldset id="input-transpo" class="form-section input-section">
+                                    <legend  class="form-section-title">Transportation</legend>
                                     <label>Public Transportation</label>
-                                    <input type="number" value="0" class="input-box" id="in-transpo-pub" name="in-transpo-pub"><br>
+                                    <input type="number" value="0" class="input-box" id="in-transpo-pub" name="in-transpo-pub" min="0" required><br>
                                     <label>Taxis/rideshares</label>
-                                    <input type="number" value="0" class="input-box" id="in-transpo-ride" name="in-transpo-ride"><br>
+                                    <input type="number" value="0" class="input-box" id="in-transpo-ride" name="in-transpo-ride" min="0" required><br>
                                     <label>Gas for car</label>
-                                    <input type="number" value="0" class="input-box" id="in-transpo-fuel" name="in-transpo-fuel"><br>
+                                    <input type="number" value="0" class="input-box" id="in-transpo-fuel" name="in-transpo-fuel" min="0" required><br>
                                     <label>Parking/toll fees</label>
-                                    <input type="number" value="0" class="input-box" id="in-transpo-park" name="in-transpo-park"><br>
+                                    <input type="number" value="0" class="input-box" id="in-transpo-park" name="in-transpo-park" min="0" required><br>
                                     <label>Car maintenance (like oil changes)</label>
-                                    <input type="number" value="0" class="input-box" id="in-transpo-maint" name="in-transpo-maint"><br>
+                                    <input type="number" value="0" class="input-box" id="in-transpo-maint" name="in-transpo-maint" min="0" required><br>
                                     <label>Car insurance</label>
-                                    <input type="number" value="0" class="input-box" id="in-transpo-insur" name="in-transpo-insur"><br>
+                                    <input type="number" value="0" class="input-box" id="in-transpo-insur" name="in-transpo-insur" min="0" required><br>
                                     <label>Car payment</label>
-                                    <input type="number" value="0" class="input-box" id="in-transpo-debt" name="in-transpo-debt"><br>
+                                    <input type="number" value="0" class="input-box" id="in-transpo-debt" name="in-transpo-debt" min="0" required><br>
                                     <label>Other transportation expenses</label>
-                                    <input type="number" value="0" class="input-box" id="in-transpo-other" name="in-transpo-other"><br>
+                                    <input type="number" value="0" class="input-box" id="in-transpo-other" name="in-transpo-other" min="0" required><br>
                                 </fieldset>
-                                <fieldset class="form-section">
+                                <fieldset class="form-section  input-section">
                                     <legend class="form-section-title">Health</legend>
                                     <label>Health Insurance</label>
-                                    <input type="number" value="0" class="input-box" id="in-hlth-insur" name="in-hlth-insur"><br>
+                                    <input type="number" value="0" class="input-box" id="in-hlth-insur" name="in-hlth-insur" min="0" required><br>
                                     <label>Prescritions</label>
-                                    <input type="number" value="0" class="input-box" id="in-hlth-meds" name="in-hlth-meds"><br>
+                                    <input type="number" value="0" class="input-box" id="in-hlth-meds" name="in-hlth-meds" min="0" required><br>
                                     <label>Co-pays for doctor's appointments</label>
-                                    <input type="number" value="0" class="input-box" id="in-hlth-copay" name="input-hlth-copay"><br>
+                                    <input type="number" value="0" class="input-box" id="in-hlth-copay" name="input-hlth-copay" min="0" required><br>
                                     <label>Other health expenses</label>
-                                    <input type="number" value="0" class="input-box" id="in-hlth-other" name="in-hlth-other"><br>
+                                    <input type="number" value="0" class="input-box" id="in-hlth-other" name="in-hlth-other" min="0" required><br>
                                 </fieldset>
-                                <fieldset class="form-section">
+                                <fieldset class="form-section  input-section">
                                     <legend class="form-section-title">Personal, family maintenece, & lifestyle</legend>
                                     <label>Childcare (daycare, babysitting, etc.)</label>
-                                    <input type="number" value="0" class="input-box" id="in-life-childcare" name="in-life-childcare"><br>
+                                    <input type="number" value="0" class="input-box" id="in-life-childcare" name="in-life-childcare" min="0" required><br>
                                     <label>Child support you pay</label>
-                                    <input type="number" value="0" class="input-box" id="in-life-chldsupp" name="in-life-chldsupp"><br>
+                                    <input type="number" value="0" class="input-box" id="in-life-chldsupp" name="in-life-chldsupp" min="0" required><br>
                                     <label>Money you send to family</label>
-                                    <input type="number" value="0" class="input-box" id="in-life-famsupp" name="in-life-famsupp"><br>
+                                    <input type="number" value="0" class="input-box" id="in-life-famsupp" name="in-life-famsupp" min="0" required><br>
                                     <label>Clothing and shoes</label>
-                                    <input type="number" value="0" class="input-box" id="in-life-wardrobe" name="in-life-wardrobe"><br>
+                                    <input type="number" value="0" class="input-box" id="in-life-wardrobe" name="in-life-wardrobe" min="0" required><br>
                                     <label>Gym/fitness memberships</label>
-                                    <input type="number" value="0" class="input-box" id="in-life-getfit" name="in-life-getfit"><br>
+                                    <input type="number" value="0" class="input-box" id="in-life-getfit" name="in-life-getfit" min="0" required><br>
                                     <label>Pets</label>
-                                    <input type="number" value="0" class="input-box" id="in-life-doggo" name="in-life-doggo"><br>
+                                    <input type="number" value="0" class="input-box" id="in-life-doggo" name="in-life-doggo" min="0" required><br>
                                     <label>Entertainment (like subscriptions, movies, concerts, etc.)</label><br>
-                                    <input type="number" value="0" class="input-box" id="in-life-fun" name="in-life-fun"><br>
+                                    <input type="number" value="0" class="input-box" id="in-life-fun" name="in-life-fun" min="0" required><br>
                                     <label>Travel</label>
-                                    <input type="number" value="0" class="input-box" id="in-life-travel" name="in=in-life-travel"><br>
+                                    <input type="number" value="0" class="input-box" id="in-life-travel" name="in=in-life-travel" min="0" required><br>
                                     <label>Other personal and family expenses (like donations, laundry, haircuts,etc.)</label><br>
-                                    <input type="number" value="0" class="input-box" id="in-life-other" name="in-life-other"><br>
+                                    <input type="number" value="0" class="input-box" id="in-life-other" name="in-life-other" min="0" required><br>
                                 </fieldset>
-                                <fieldset class="form-section">
+                                <fieldset class="form-section  input-section">
                                     <legend class="form-section-title">Education & Professional</legend>
                                     <label>Student Loans</label>
-                                    <input type="number" value="0" class="input-box" id="in-edu-stdntlns" name="in-edu-stdntlns"><br>
+                                    <input type="number" value="0" class="input-box" id="in-edu-stdntlns" name="in-edu-stdntlns" min="0" required><br>
                                     <label>Tuition Payments</label>
-                                    <input type="number" value="0" class="input-box" id="in-edu-tuition" name="in-edu-tuition"><br>
+                                    <input type="number" value="0" class="input-box" id="in-edu-tuition" name="in-edu-tuition" min="0" required><br>
                                     <label>Books and Supplies</label>
-                                    <input type="number" value="0" class="input-box" id="in-edu-supplies" name="in-edu-supplies"><br>
+                                    <input type="number" value="0" class="input-box" id="in-edu-supplies" name="in-edu-supplies" min="0" required><br>
                                     <label>Professional membership fees</label>
-                                    <input type="number" value="0" class="input-box" id="in-edu-fees" name="in-edu-fees"><br>
+                                    <input type="number" value="0" class="input-box" id="in-edu-fees" name="in-edu-fees" min="0" required><br>
                                 </fieldset>
-                                <fieldset class="form-section">
+                                <fieldset class="form-section  input-section">
                                     <legend class="form-section-title">Financial Health & Other Expenses</legend>
                                     <label>Bank account/credit card fees</label>
-                                    <input type="number" value="0" class="input-box" id="in-fin-fees" name="in-fin-fees"><br>
+                                    <input type="number" value="0" class="input-box" id="in-fin-fees" name="in-fin-fees" min="0" required><br>
                                     <label>Credit carsd or other debt payments</label>
-                                    <input type="number" value="0" class="input-box" id="in-fin-debt" name="in-fin-debt"><br>
+                                    <input type="number" value="0" class="input-box" id="in-fin-debt" name="in-fin-debt" min="0" required><br>
                                     <label>Savings deposits</label>
-                                    <input type="number" value="0" class="input-box" id="in-fin-savings" name="in-fin-savings"><br>
+                                    <input type="number" value="0" class="input-box" id="in-fin-savings" name="in-fin-savings" min="0" required><br>
                                     <label>Investment contributions</label>
-                                    <input type="number" value="0" class="input-box" id="in-fin-stonks" name="in-fin-stonks"><br>
+                                    <input type="number" value="0" class="input-box" id="in-fin-stonks" name="in-fin-stonks" min="0" required><br>
                                     <label>Other expenses this month</label>
-                                    <input type="number" value="0" class="input-box" id="in-fin-other" name="in-fin-other"><br>
+                                    <input type="number" value="0" class="input-box" id="in-fin-other" name="in-fin-other" min="0" required><br>
                                 </fieldset>
                             </fieldset>
                         </section>

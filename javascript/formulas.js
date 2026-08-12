@@ -2,28 +2,22 @@
 
 //get the inputs from the html form and put them into the arrays
 //get the results of the math and put them back in the outputs section
-//go read more abou this https://www.w3schools.com/html/html5_webworkers.asp and figure out if it would fulfil the requirement
-    //mentor feedback would be especially helpful about this^^
-//go actually do a media query for mobile responsiveness
     //the labels need to wrap to a different line because right now they are obscured in a smaller viewing window
         //something something max width + wrapping?? figure it out Do I need <p>s?
-//add a readme
+//actually write something in the README
 //make sure all the pages have real text instead of placeholders
-//make sure the form validates user input/double check if I've already done that??
     //reevaluate the buttons
 //finish making it pretty/figure out random minor issues if there is time
-    //figure out how to make the webpage header use the 
-    //why isn't the image reference in the stylesheet working but the inline html is??
-    //make the buttons grey
+    //figure out how to make the webpage header use the fancy font
 
-//li = line item
+    //li = line item
 
 const liWages = [];
 const liIncomeOther = [];
 
 const income = [liWages,liIncomeOther];
 
-const liHousing = [5, 8, 10];
+const liHousing = [];
 const liFood = [];
 const liTranspo = [];
 const liHealth = [];
@@ -72,3 +66,61 @@ let totalFinancial = sumCategory(liFinancial);
 let totalExpenses = sumCategory(expenses);
 
 
+
+const form = document.getElementById('input-form');
+let formData = {};
+
+const calculatedBudget = {
+  calculatedIncome: 0,
+  otherCalulatedField: 12,
+  alsoCalculatedField: 34
+};
+
+const detuctExpenseHandler = (expense) => {
+  calculatedBudget.incomeAfterExpenses = calculatedBudget.incomeAfterExpenses - parseInt(expense);
+}
+
+const addSupplimentalIncomeHandler = (expense) => {
+  calculatedBudget.incomeAfterExpenses = calculatedBudget.incomeAfterExpenses + parseInt(expense);
+}
+
+const dataHandler = (data) => {
+  calculatedBudget.incomeAfterExpenses = parseInt(data.wage_after_taxes);
+  
+  addSupplimentalIncomeHandler(data.supplimental_income);
+  detuctExpenseHandler(data.expense);
+  // otherHandler();
+  // otherHandler(); 
+  // etc
+  
+  return calculatedBudget;
+}
+
+const populateResultOnPage = (calcBudget) => {
+  const resultDiv = document.getElementById('result');
+  resultDiv.innerText = ""; //ensure div is empty before adding stuff to it
+  
+  Object.keys(calcBudget).forEach((key) => {
+    const p = document.createElement('p');
+    p.innerText = `${key}: ${calcBudget[key]}`;
+    resultDiv.appendChild(p);
+  })
+}
+
+form.addEventListener("submit", (e) => {
+  // Prevent the refresh of the page and/or the redirect that occurs on form submission
+  e.preventDefault();
+
+  const data = new FormData(form);
+  
+  for (const [key,value] of data) {
+    // console.log(`Adding ${key} with value of ${value} to form data...`);
+    formData[key] = value;
+  }
+  
+  calcuatedResults = dataHandler(formData);
+  populateResultOnPage(calcuatedResults);
+  
+  // reset formData so continued operations don't get weird
+  formData = {};
+})

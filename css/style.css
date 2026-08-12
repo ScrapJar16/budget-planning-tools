@@ -104,6 +104,19 @@ h1 {
     box-shadow: 3px 3px 8px #000;
 }
 
+/* .input-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+label.div {
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    
+} */
+
 .input-output-grouping {
     border: 0px;
     display: flex;
@@ -143,6 +156,10 @@ h1 {
     padding: 0.5rem;
 }
 
+.button:hover {
+    background-color: #8D98A7;
+}
+
 .footer {
     background-color: #436228;
     gap: 0.5rem;
@@ -162,4 +179,16 @@ h1 {
     border-radius: 15px;
     border: 3px solid #000;
     float: right;
+}
+
+@media screen and (min-width: 600px) {
+    .form-container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .form {
+        max-width: 75%;
+        align-self: center;
+    }
 }
