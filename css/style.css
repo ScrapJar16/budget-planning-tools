@@ -30,7 +30,7 @@ h1 {
 }
 
 #branded-title-heading {
-    font-family: "./../.../fonts/CinzelDecorative-Regular.ttf";
+    font-family: "../fonts/CinzelDecorative-Regular.ttf";
 }
 
 .header-logo{
@@ -138,6 +138,12 @@ label.div {
 .input-box {
     position: absolute;
     right: 0.5rem;
+}
+
+.outputBox {
+    background-color: #fff;
+    border: 0.5px solid #000;
+    min-width: 5%;
 }
 
 .button-box{

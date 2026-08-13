@@ -252,6 +252,7 @@ updateResultFinancial();
 const totalExpenses = form.elements["out-expense-summary"]
 
 function updateResultExpenses() {
+    
     const totalHousing = totalHousingExpenses.valueAsNumber;
     const totalFood = totalFoodExpenses.valueAsNumber;
     const totalTranspo = totalTranspoExpenses.valueAsNumber;
@@ -260,8 +261,17 @@ function updateResultExpenses() {
     const totalEducation = totalEduExpenses.valueAsNumber;
     const totalFinancial = totalFinExpenses.valueAsNumber;
     console.log("updating expenses")
+    console.log(totalHousing);
+    console.log(totalFood);
+    console.log(totalTranspo);
+    console.log(totalHealth);
+    console.log(totalLifestyle);
+    console.log(totalEducation);
+    console.log(totalFinancial);
 
     totalExpenses.value = totalHousing + totalFood + totalTranspo + totalHealth + totalLifestyle + totalEducation + totalFinancial;
+
+    console.log(totalExpenses)
 }
 form.addEventListener("input", updateResultExpenses);
 updateResultExpenses();

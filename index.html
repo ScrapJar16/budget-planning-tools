@@ -34,7 +34,7 @@
                         </p>
                         <p>
                             Enter the amount you spent for each line item in a given category.
-                            If you do not have a value for a particular categor, simply leave the value at zero. (Example: No pet? The line item for pets will equal zeor.)
+                            If you do not have a value for a particular categor, simply leave the value at zero. (Example: No pet? The line item for pets will equal zero.)
                         </p>
                     </section>
                 </section>  
@@ -168,32 +168,35 @@
                                 <fieldset class="form-section">
                                     <legend class="form-section-title">Category Totals</legend>
                                     <label ><b>Income Total</b></label>
-                                    <output id="out-income-summary" name="out-income-summary"></output><br>
+                                    <output id="out-income-summary" name="out-income-summary" class="outputBox"></output><br>
                                     <label>Housing</label>
-                                    <output id="out-house-total" name="out-house-total"></output><br>
+                                    <output id="out-house-total" name="out-house-total" class="outputBox"></output><br>
                                     <label>Food & Cleaning</label>
-                                    <output id="out-food-total" name="out-food-total"></output><br>
+                                    <output id="out-food-total" name="out-food-total" class="outputBox"></output><br>
                                     <label>Transportation</label>
-                                    <output id="out-transpo-total" name="out-transpo-total"></output><br>
+                                    <output id="out-transpo-total" name="out-transpo-total" class="outputBox"></output><br>
                                     <label>Health</label>
-                                    <output id="out-hlth-total" name="out-hlth-total"></output><br>
+                                    <output id="out-hlth-total" name="out-hlth-total" class="outputBox"></output><br>
                                     <label>Personal, Family, & Lifestyle</label>
-                                    <output  id="out-life-total" name="out-life-total"></output><br>
+                                    <output  id="out-life-total" name="out-life-total" class="outputBox"></output><br>
                                     <label>Education & Professional</label>
-                                    <output id="out-edu-total" name="out-edu-total"></output><br>
+                                    <output id="out-edu-total" name="out-edu-total" class="outputBox"></output><br>
                                     <label>Financial Health & Other Expenses</label>
-                                    <output id="out-fin-total" name="out-fin-total"></output><br>
+                                    <output id="out-fin-total" name="out-fin-total" class="outputBox"></output><br>
                                     <label><b>Expenses Total</b></label>
                                     <output id="out-expense-summary" name="out-expense-summary"></output>
                                 </fieldset>
                                 <fieldset class="form-section" id="display-overall-total">
                                     <legend class="form-section-title">Overall Total</legend>
                                     <label>Income</label>
-                                    <output id="out-income-overall" name="out-income-overall" class="output-box">(sum of income)</output> - 
+                                    <output id="out-income-overall" name="out-income-overall" class="output-box" class="outputBox">(sum of income)</output> - 
                                     <label>Expenses</label>
-                                    <output id="out-expense-overall" name="out-expense-overall" class="output-box"> (sum of expenses)</output> = 
+                                    <output id="out-expense-overall" name="out-expense-overall" class="output-box" class="outputBox"> (sum of expenses)</output> = 
                                     <label>Difference</label>
                                     <output id="out-difference" name="out-difference" class="output-box">(hopefully this isn't a negative)</output>
+                                    <!-- <p>
+                                        <canvas id="myChart"></canvas>
+                                    </p> -->
                                 </fieldset>
                                 <fieldset class="form-section">
                                     <legend class="form-section-title">Things to Consider</legend>
@@ -208,10 +211,10 @@
                                                 and then use that number in your monthly budget to set aside savings throughout the year.
                                             This will help ensure you will have funds to cover those expenses when you need them.
                                         </p>
-                                        <p>
+                                        <!-- <p>
                                             Something here about how recommendations are to keep your housing expenses within a certian percentage of income.
                                             Maybe a way to flag if their totals are above that, but save that rabbit hole for later!
-                                        </p>
+                                        </p> -->
                                     </section>
                                 </fieldset>
                             </fieldset>
@@ -224,6 +227,25 @@
                 <p><img src="img/budget-goat-logo-words-removebg-preview.png" width="100" height="100" class="footer-logo"></p>
             </footer>
         </main>
-       <script src="./javascript/formulas.js"></script> 
+       <script src="./javascript/formulas.js"></script>
+       <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+       <script>
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Housing', 'Food & Cleaning', 'Transportation', 'Health', 'Personal, Family, & Lifestyle', 'Education & Professional', 'Financial Health & Other Expenses'],
+                    datasets: [{
+                        label: '% of Expenses',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    
+                }
+            });
+        </script>  -->
     </body>
 </html>
