@@ -174,11 +174,12 @@ label.div {
 }
 
 .footer-logo {
-    background-image: "budget-goat-logo-words.png";
+    /* background-image: "budget-goat-logo-words.png"; */
     box-shadow: 5px 5px 15px #000;
     border-radius: 15px;
     border: 3px solid #000;
     float: right;
+    background-color:#ECBA3D;
 }
 
 @media screen and (min-width: 600px) {
