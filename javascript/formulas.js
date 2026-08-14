@@ -72,10 +72,12 @@
 
 //reads the number out of an input box, and treats a blank box as 0
 function valueOrZero(box) {
-  if (isNaN(box.valueAsNumber)) {
+  const value = box.valueAsNumber;
+
+  if (isNaN(value) || value < 0) {
     return 0;
   }
-  return box.valueAsNumber;
+  return value;
 }
 
 //income subcategory method
@@ -333,14 +335,14 @@ function budgetVerdict(incomeTotal, expenseTotal) {
   return "You have money left over";
 }
 function updateResultOverall() {
-    const incomeTotal = Number(totalIncome.value);
-    const expenseTotal = Number(totalExpenses.value);
-    console.log("updating overall total")
+  const incomeTotal = Number(totalIncome.value);
+  const expenseTotal = Number(totalExpenses.value);
+  console.log("updating overall total");
 
-    income.value = incomeTotal;
-    expenses.value = expenseTotal;
-    overallDifference.value = incomeTotal - expenseTotal;
-    overallVerdict.value = budgetVerdict(incomeTotal, expenseTotal);
+  income.value = incomeTotal;
+  expenses.value = expenseTotal;
+  overallDifference.value = incomeTotal - expenseTotal;
+  overallVerdict.value = budgetVerdict(incomeTotal, expenseTotal);
 }
 form.addEventListener("input", updateResultOverall);
 updateResultOverall();
@@ -362,14 +364,14 @@ const expenseChart = new Chart(document.getElementById("myChart"), {
         label: "Expenses",
         data: [],
         backgroundColor: [
-                "#2A78D6", // blue - housing
-                "#EB6834", // orange - food
-                "#1BAF7A", // aqua - transportation
-                "#EDA100", // yellow - health
-                "#E87BA4", // magenta - lifestyle
-                "#008300", // green - education
-                "#4A3AA7", // violet - financial
-            ],
+          "#2A78D6", // blue - housing
+          "#EB6834", // orange - food
+          "#1BAF7A", // aqua - transportation
+          "#EDA100", // yellow - health
+          "#E87BA4", // magenta - lifestyle
+          "#008300", // green - education
+          "#4A3AA7", // violet - financial
+        ],
         borderWidth: 2,
         borderColor: "#fff",
       },
@@ -394,3 +396,58 @@ function updateChart() {
 }
 form.addEventListener("input", updateChart);
 updateChart();
+// Input validation
+const inputWarning = document.getElementById("input-warning");
+
+function loadChartColors() {
+  //a random hex color, so the scheme is different on every reload
+  const randomColor = Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, "0");
+  const url =
+    "https://www.thecolorapi.com/scheme?hex=" +
+    randomColor +
+    "&mode=quad&count=7";
+
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (scheme) {
+      console.log("got colors from the color api");
+
+      expenseChart.data.datasets[0].backgroundColor = scheme.colors.map(
+        function (color) {
+          return color.hex.value;
+        },
+      );
+      expenseChart.update();
+    })
+    .catch(function (error) {
+      console.log("could not reach the color api, keeping the default colors");
+      console.log(error);
+    });
+}
+loadChartColors();
+
+function checkInputs() {
+  let badCount = 0;
+
+  for (const box of form.querySelectorAll("input[type=number]")) {
+    if (box.valueAsNumber < 0) {
+      box.classList.add("input-box-error");
+      badCount = badCount + 1;
+    } else {
+      box.classList.remove("input-box-error");
+    }
+  }
+
+  if (badCount > 0) {
+    inputWarning.textContent =
+      "Please enter amounts of zero or more. Negative entries are highlighted and are not being counted.";
+  } else {
+    inputWarning.textContent = "";
+  }
+}
+form.addEventListener("input", checkInputs);
+checkInputs();

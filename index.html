@@ -14,7 +14,7 @@
           <h1 id="branded-title-heading">Budget Goat</h1>
           <p></p>
           <img
-            src="img/budget-goat-circle.png"
+            src="img/budget-goat-logo-words-removebg-preview.png"
             width="100"
             height="100"
             class="header-logo"
@@ -49,10 +49,12 @@
               the value at zero. (Example: No pet? The line item for pets will
               equal zero.)
             </p>
+            <p><strong>Please only enter positive numbers!</strong></p>
           </section>
         </section>
         <section class="form-container">
           <form id="input-form" class="form">
+            <p id="input-warning" class="input-warning"></p>
             <section class="input-output-grouping">
               <h2 class="form-header">Inputs</h2>
               <!-- <fieldset class="form-section">
@@ -88,6 +90,7 @@
               </fieldset>
               <fieldset id="input-expenses" class="form-section">
                 <legend class="form-section-title">Expenses</legend>
+                <p id="input-warning" class="input-warning"></p>
                 <fieldset id="input=housing" class="form-section">
                   <legend class="form-section-title">Housing</legend>
                   <label>Rent/Mortgage</label>
@@ -97,7 +100,6 @@
                     class="input-box"
                     id="in-house-rent-mort"
                     name="in-house-rent-mort"
-                    min="0"
                     required
                   /><br />
                   <label>Insurance (renters/homeowners)</label>
@@ -107,7 +109,6 @@
                     class="input-box"
                     id="in-house-insur"
                     name="in-house-insur"
-                    min="0"
                     required
                   /><br />
                   <label>Utilities (like electricity, gas, water, etc.)</label
@@ -118,7 +119,6 @@
                     class="input-box"
                     id="in-house-util"
                     name="in-house-util"
-                    min="0"
                     required
                   /><br />
                   <label>Internet/Phone</label>
@@ -128,7 +128,6 @@
                     class="input-box"
                     id="in-house-comms"
                     name="in-house-comms"
-                    min="0"
                     required
                   /><br />
                   <label>Other Housing Expenses</label>
@@ -138,7 +137,6 @@
                     class="input-box"
                     id="in-house-other"
                     name="in-house-other"
-                    min="0"
                     required
                   /><br />
                 </fieldset>
@@ -147,6 +145,7 @@
                   class="form-section input-section"
                 >
                   <legend class="form-section-title">Food & Cleaning</legend>
+                  <p id="input-warning" class="input-warning"></p>
                   <label>Groceries and household supplies</label>
                   <input
                     type="number"
@@ -154,7 +153,6 @@
                     class="input-box"
                     id="in-food-groceries"
                     name="in-food-groceries"
-                    min="0"
                     required
                   /><br />
                   <label>Eating out/food delivery</label>
@@ -164,7 +162,6 @@
                     class="input-box"
                     id="in-food-resturant"
                     name="in-food-resturant"
-                    min="0"
                     required
                   /><br />
                   <label>Other food expenses</label>
@@ -174,12 +171,12 @@
                     class="input-box"
                     id="in-food-other"
                     name="in-food-other"
-                    min="0"
                     required
                   /><br />
                 </fieldset>
                 <fieldset id="input-transpo" class="form-section input-section">
                   <legend class="form-section-title">Transportation</legend>
+                  <p id="input-warning" class="input-warning"></p>
                   <label>Public Transportation</label>
                   <input
                     type="number"
@@ -187,7 +184,6 @@
                     class="input-box"
                     id="in-transpo-pub"
                     name="in-transpo-pub"
-                    min="0"
                     required
                   /><br />
                   <label>Taxis/rideshares</label>
@@ -197,7 +193,6 @@
                     class="input-box"
                     id="in-transpo-ride"
                     name="in-transpo-ride"
-                    min="0"
                     required
                   /><br />
                   <label>Gas for car</label>
@@ -207,7 +202,6 @@
                     class="input-box"
                     id="in-transpo-fuel"
                     name="in-transpo-fuel"
-                    min="0"
                     required
                   /><br />
                   <label>Parking/toll fees</label>
@@ -217,7 +211,6 @@
                     class="input-box"
                     id="in-transpo-park"
                     name="in-transpo-park"
-                    min="0"
                     required
                   /><br />
                   <label>Car maintenance (like oil changes)</label>
@@ -227,7 +220,6 @@
                     class="input-box"
                     id="in-transpo-maint"
                     name="in-transpo-maint"
-                    min="0"
                     required
                   /><br />
                   <label>Car insurance</label>
@@ -237,7 +229,6 @@
                     class="input-box"
                     id="in-transpo-insur"
                     name="in-transpo-insur"
-                    min="0"
                     required
                   /><br />
                   <label>Car payment</label>
@@ -247,7 +238,6 @@
                     class="input-box"
                     id="in-transpo-debt"
                     name="in-transpo-debt"
-                    min="0"
                     required
                   /><br />
                   <label>Other transportation expenses</label>
@@ -257,12 +247,12 @@
                     class="input-box"
                     id="in-transpo-other"
                     name="in-transpo-other"
-                    min="0"
                     required
                   /><br />
                 </fieldset>
                 <fieldset class="form-section input-section">
                   <legend class="form-section-title">Health</legend>
+                  <p id="input-warning" class="input-warning"></p>
                   <label>Health Insurance</label>
                   <input
                     type="number"
@@ -270,7 +260,6 @@
                     class="input-box"
                     id="in-hlth-insur"
                     name="in-hlth-insur"
-                    min="0"
                     required
                   /><br />
                   <label>Prescritions</label>
@@ -280,7 +269,6 @@
                     class="input-box"
                     id="in-hlth-meds"
                     name="in-hlth-meds"
-                    min="0"
                     required
                   /><br />
                   <label>Co-pays for doctor's appointments</label>
@@ -290,7 +278,6 @@
                     class="input-box"
                     id="in-hlth-copay"
                     name="input-hlth-copay"
-                    min="0"
                     required
                   /><br />
                   <label>Other health expenses</label>
@@ -300,7 +287,6 @@
                     class="input-box"
                     id="in-hlth-other"
                     name="in-hlth-other"
-                    min="0"
                     required
                   /><br />
                 </fieldset>
@@ -308,6 +294,7 @@
                   <legend class="form-section-title">
                     Personal, family maintenece, & lifestyle
                   </legend>
+                  <p id="input-warning" class="input-warning"></p>
                   <label>Childcare (daycare, babysitting, etc.)</label>
                   <input
                     type="number"
@@ -315,7 +302,6 @@
                     class="input-box"
                     id="in-life-childcare"
                     name="in-life-childcare"
-                    min="0"
                     required
                   /><br />
                   <label>Child support you pay</label>
@@ -325,7 +311,6 @@
                     class="input-box"
                     id="in-life-chldsupp"
                     name="in-life-chldsupp"
-                    min="0"
                     required
                   /><br />
                   <label>Money you send to family</label>
@@ -335,7 +320,6 @@
                     class="input-box"
                     id="in-life-famsupp"
                     name="in-life-famsupp"
-                    min="0"
                     required
                   /><br />
                   <label>Clothing and shoes</label>
@@ -345,7 +329,6 @@
                     class="input-box"
                     id="in-life-wardrobe"
                     name="in-life-wardrobe"
-                    min="0"
                     required
                   /><br />
                   <label>Gym/fitness memberships</label>
@@ -355,7 +338,6 @@
                     class="input-box"
                     id="in-life-getfit"
                     name="in-life-getfit"
-                    min="0"
                     required
                   /><br />
                   <label>Pets</label>
@@ -365,7 +347,6 @@
                     class="input-box"
                     id="in-life-doggo"
                     name="in-life-doggo"
-                    min="0"
                     required
                   /><br />
                   <label
@@ -378,7 +359,6 @@
                     class="input-box"
                     id="in-life-fun"
                     name="in-life-fun"
-                    min="0"
                     required
                   /><br />
                   <label>Travel</label>
@@ -388,7 +368,6 @@
                     class="input-box"
                     id="in-life-travel"
                     name="in=in-life-travel"
-                    min="0"
                     required
                   /><br />
                   <label
@@ -401,7 +380,6 @@
                     class="input-box"
                     id="in-life-other"
                     name="in-life-other"
-                    min="0"
                     required
                   /><br />
                 </fieldset>
@@ -409,6 +387,7 @@
                   <legend class="form-section-title">
                     Education & Professional
                   </legend>
+                  <p id="input-warning" class="input-warning"></p>
                   <label>Student Loans</label>
                   <input
                     type="number"
@@ -416,7 +395,6 @@
                     class="input-box"
                     id="in-edu-stdntlns"
                     name="in-edu-stdntlns"
-                    min="0"
                     required
                   /><br />
                   <label>Tuition Payments</label>
@@ -426,7 +404,6 @@
                     class="input-box"
                     id="in-edu-tuition"
                     name="in-edu-tuition"
-                    min="0"
                     required
                   /><br />
                   <label>Books and Supplies</label>
@@ -436,7 +413,6 @@
                     class="input-box"
                     id="in-edu-supplies"
                     name="in-edu-supplies"
-                    min="0"
                     required
                   /><br />
                   <label>Professional membership fees</label>
@@ -446,7 +422,6 @@
                     class="input-box"
                     id="in-edu-fees"
                     name="in-edu-fees"
-                    min="0"
                     required
                   /><br />
                 </fieldset>
@@ -454,6 +429,7 @@
                   <legend class="form-section-title">
                     Financial Health & Other Expenses
                   </legend>
+                  <p id="input-warning" class="input-warning"></p>
                   <label>Bank account/credit card fees</label>
                   <input
                     type="number"
@@ -461,7 +437,6 @@
                     class="input-box"
                     id="in-fin-fees"
                     name="in-fin-fees"
-                    min="0"
                     required
                   /><br />
                   <label>Credit carsd or other debt payments</label>
@@ -471,7 +446,6 @@
                     class="input-box"
                     id="in-fin-debt"
                     name="in-fin-debt"
-                    min="0"
                     required
                   /><br />
                   <label>Savings deposits</label>
@@ -481,7 +455,6 @@
                     class="input-box"
                     id="in-fin-savings"
                     name="in-fin-savings"
-                    min="0"
                     required
                   /><br />
                   <label>Investment contributions</label>
@@ -491,7 +464,6 @@
                     class="input-box"
                     id="in-fin-stonks"
                     name="in-fin-stonks"
-                    min="0"
                     required
                   /><br />
                   <label>Other expenses this month</label>
@@ -501,7 +473,6 @@
                     class="input-box"
                     id="in-fin-other"
                     name="in-fin-other"
-                    min="0"
                     required
                   /><br />
                 </fieldset>
