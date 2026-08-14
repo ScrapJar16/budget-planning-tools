@@ -2,15 +2,15 @@
 
 //get the inputs from the html form and put them into the arrays
 //get the results of the math and put them back in the outputs section
-    //the labels need to wrap to a different line because right now they are obscured in a smaller viewing window
-        //something something max width + wrapping?? figure it out Do I need <p>s?
+//the labels need to wrap to a different line because right now they are obscured in a smaller viewing window
+//something something max width + wrapping?? figure it out Do I need <p>s?
 //actually write something in the README
 //make sure all the pages have real text instead of placeholders
-    //reevaluate the buttons
+//reevaluate the buttons
 //finish making it pretty/figure out random minor issues if there is time
-    //figure out how to make the webpage header use the fancy font
+//figure out how to make the webpage header use the fancy font
 
-    //li = line item
+//li = line item
 
 // const liWages = [];
 // const liIncomeOther = [];
@@ -70,6 +70,14 @@
 //the number goes into a storage thing so I can do math later
 //(wages after taxes) + (other income) = income total (in the output form section)
 
+//reads the number out of an input box, and treats a blank box as 0
+function valueOrZero(box) {
+  if (isNaN(box.valueAsNumber)) {
+    return 0;
+  }
+  return box.valueAsNumber;
+}
+
 //income subcategory method
 const form = document.getElementById("input-form");
 const inWages = form.elements["in-wages"];
@@ -77,36 +85,41 @@ const inOther = form.elements["in-other"];
 const totalIncome = form.elements["out-income-summary"];
 
 function updateIncomeResult() {
-  const wageValue = inWages.valueAsNumber;
-  const otherIncomeValue = inOther.valueAsNumber;
-  console.log("updating income")
+  const wageValue = valueOrZero(inWages);
+  const otherIncomeValue = valueOrZero(inOther);
+  console.log("updating income");
 
   totalIncome.value = wageValue + otherIncomeValue;
-};
+}
 
 form.addEventListener("input", updateIncomeResult);
 
 updateIncomeResult();
 
-//Housing 
+//Housing
 const inRent = form.elements["in-house-rent-mort"];
 const inInsurance = form.elements["in-house-insur"];
-const inUtilities = form.elements["in-house-util"]
-const inInternet = form.elements["in-house-comms"]
-const inHouseOther = form.elements["in-house-other"]
+const inUtilities = form.elements["in-house-util"];
+const inInternet = form.elements["in-house-comms"];
+const inHouseOther = form.elements["in-house-other"];
 
 const totalHousingExpenses = form.elements["out-house-total"];
 
 function updateResultHousing() {
-  const rentMortValue = inRent.valueAsNumber;
-  const houseInsuranceValue = inInsurance.valueAsNumber;
-  const utilitiesValue = inUtilities.valueAsNumber;
-  const commsValue = inInternet.valueAsNumber;
-  const houseOtherValue = inHouseOther.valueAsNumber;
-  console.log("updating housing total")
+  const rentMortValue = valueOrZero(inRent);
+  const houseInsuranceValue = valueOrZero(inInsurance);
+  const utilitiesValue = valueOrZero(inUtilities);
+  const commsValue = valueOrZero(inInternet);
+  const houseOtherValue = valueOrZero(inHouseOther);
+  console.log("updating housing total");
 
-  totalHousingExpenses.value = rentMortValue + houseInsuranceValue + utilitiesValue + commsValue + houseOtherValue;
-};
+  totalHousingExpenses.value =
+    rentMortValue +
+    houseInsuranceValue +
+    utilitiesValue +
+    commsValue +
+    houseOtherValue;
+}
 
 form.addEventListener("input", updateResultHousing);
 
@@ -119,13 +132,13 @@ const inFoodOther = form.elements["in-food-other"];
 const totalFoodExpenses = form.elements["out-food-total"];
 
 function updateResultFood() {
-    const groceriesValue = inGroceries.valueAsNumber;
-    const resturantValue = inResturants.valueAsNumber;
-    const foodOtherValue = inFoodOther.valueAsNumber;
-    console.log("updating food total")
+  const groceriesValue = valueOrZero(inGroceries);
+  const resturantValue = valueOrZero(inResturants);
+  const foodOtherValue = valueOrZero(inFoodOther);
+  console.log("updating food total");
 
-    totalFoodExpenses.value = groceriesValue + resturantValue + foodOtherValue;
-};
+  totalFoodExpenses.value = groceriesValue + resturantValue + foodOtherValue;
+}
 form.addEventListener("input", updateResultFood);
 
 updateResultFood();
@@ -134,7 +147,7 @@ updateResultFood();
 const inParking = form.elements["in-transpo-pub"];
 const inRides = form.elements["in-transpo-ride"];
 const inGas = form.elements["in-transpo-fuel"];
-const inCarMaint = form.elements["in-transpo-maint"]
+const inCarMaint = form.elements["in-transpo-maint"];
 const inCarInsurance = form.elements["in-transpo-insur"];
 const inCarDebt = form.elements["in-transpo-debt"];
 const inCarOther = form.elements["in-transpo-other"];
@@ -142,16 +155,23 @@ const inCarOther = form.elements["in-transpo-other"];
 const totalTranspoExpenses = form.elements["out-transpo-total"];
 
 function updateResultTranspo() {
-    const parkingValue = inParking.valueAsNumber;
-    const ridesValue = inRides.valueAsNumber;
-    const gasValue = inGas.valueAsNumber;
-    const carMaintValue = inCarMaint.valueAsNumber;
-    const carInsuranceValue = inCarInsurance.valueAsNumber;
-    const carDebtValue = inCarDebt.valueAsNumber;
-    const carOtherValue = inCarOther.valueAsNumber;
-    console.log("updating transportation total")
+  const parkingValue = valueOrZero(inParking);
+  const ridesValue = valueOrZero(inRides);
+  const gasValue = valueOrZero(inGas);
+  const carMaintValue = valueOrZero(inCarMaint);
+  const carInsuranceValue = valueOrZero(inCarInsurance);
+  const carDebtValue = valueOrZero(inCarDebt);
+  const carOtherValue = valueOrZero(inCarOther);
+  console.log("updating transportation total");
 
-    totalTranspoExpenses.value = parkingValue + ridesValue + gasValue + carMaintValue + carInsuranceValue + carDebtValue + carOtherValue;
+  totalTranspoExpenses.value =
+    parkingValue +
+    ridesValue +
+    gasValue +
+    carMaintValue +
+    carInsuranceValue +
+    carDebtValue +
+    carOtherValue;
 }
 form.addEventListener("input", updateResultTranspo);
 
@@ -166,13 +186,14 @@ const inHealthOther = form.elements["in-hlth-other"];
 const totalHealthExpenses = form.elements["out-hlth-total"];
 
 function updateResultHealth() {
-    const healthInsurValue = inHealthInsur.valueAsNumber;
-    const medsValue = inMeds.valueAsNumber;
-    const copayValue = inCopay.valueAsNumber;
-    const healthOtherValue = inHealthOther.valueAsNumber;
-    console.log("updateing health total");
+  const healthInsurValue = valueOrZero(inHealthInsur);
+  const medsValue = valueOrZero(inMeds);
+  const copayValue = valueOrZero(inCopay);
+  const healthOtherValue = valueOrZero(inHealthOther);
+  console.log("updateing health total");
 
-    totalHealthExpenses.value = healthInsurValue + medsValue + copayValue + healthOtherValue;
+  totalHealthExpenses.value =
+    healthInsurValue + medsValue + copayValue + healthOtherValue;
 }
 form.addEventListener("input", updateResultHealth);
 updateResultHealth();
@@ -191,19 +212,28 @@ const inLifeOther = form.elements["in-life-other"];
 const totalLifestyleExpenses = form.elements["out-life-total"];
 
 function updateResultLifestyle() {
-    const childcareValue = inChildcare.valueAsNumber;
-    const childSupportValue = inChildSupport.valueAsNumber;
-    const familySupportValue = inFamilySupport.valueAsNumber;
-    const wardrobeValue = inWardrobe.valueAsNumber;
-    const getFitValue = inGetFit.valueAsNumber;
-    const petsValue = inPets.valueAsNumber;
-    const funValue = inFun.valueAsNumber;
-    const travelValue = inTravel.valueAsNumber;
-    const lifestyleOtherValue = inLifeOther.valueAsNumber;
-    console.log("updating lifestyle total")
+  const childcareValue = valueOrZero(inChildcare);
+  const childSupportValue = valueOrZero(inChildSupport);
+  const familySupportValue = valueOrZero(inFamilySupport);
+  const wardrobeValue = valueOrZero(inWardrobe);
+  const getFitValue = valueOrZero(inGetFit);
+  const petsValue = valueOrZero(inPets);
+  const funValue = valueOrZero(inFun);
+  const travelValue = valueOrZero(inTravel);
+  const lifestyleOtherValue = valueOrZero(inLifeOther);
+  console.log("updating lifestyle total");
 
-    totalLifestyleExpenses.value = childcareValue + childSupportValue + familySupportValue + wardrobeValue + getFitValue + petsValue + funValue + travelValue + lifestyleOtherValue;
-};
+  totalLifestyleExpenses.value =
+    childcareValue +
+    childSupportValue +
+    familySupportValue +
+    wardrobeValue +
+    getFitValue +
+    petsValue +
+    funValue +
+    travelValue +
+    lifestyleOtherValue;
+}
 form.addEventListener("input", updateResultLifestyle);
 updateResultLifestyle();
 
@@ -216,13 +246,14 @@ const inEduFees = form.elements["in-edu-fees"];
 const totalEduExpenses = form.elements["out-edu-total"];
 
 function updateResultEdu() {
-    const studentLoanValue = inStudentLoans.valueAsNumber;
-    const tuitionValue = inTutition.valueAsNumber;
-    const suppliesValue = inSupplies.valueAsNumber;
-    const eduFeesValue = inEduFees.valueAsNumber;
-    console.log("updating education total")
+  const studentLoanValue = valueOrZero(inStudentLoans);
+  const tuitionValue = valueOrZero(inTutition);
+  const suppliesValue = valueOrZero(inSupplies);
+  const eduFeesValue = valueOrZero(inEduFees);
+  console.log("updating education total");
 
-    totalEduExpenses.value = studentLoanValue + tuitionValue + suppliesValue + eduFeesValue;
+  totalEduExpenses.value =
+    studentLoanValue + tuitionValue + suppliesValue + eduFeesValue;
 }
 form.addEventListener("input", updateResultEdu);
 updateResultEdu();
@@ -234,58 +265,132 @@ const inSavings = form.elements["in-fin-savings"];
 const inStonks = form.elements["in-fin-stonks"];
 const inFinOther = form.elements["in-fin-other"];
 
-const totalFinExpenses = form.elements["out-fin-total"]
+const totalFinExpenses = form.elements["out-fin-total"];
 
 function updateResultFinancial() {
-    const finFeesValue = inFinFees.valueAsNumber;
-    const finDebtValue = inFinDebt.valueAsNumber;
-    const savingsValue = inSavings.valueAsNumber;
-    const stonksValue = inStonks.valueAsNumber;
-    const finOtherValue = inFinOther.valueAsNumber;
-    console.log("updating financial health total")
+  const finFeesValue = valueOrZero(inFinFees);
+  const finDebtValue = valueOrZero(inFinDebt);
+  const savingsValue = valueOrZero(inSavings);
+  const stonksValue = valueOrZero(inStonks);
+  const finOtherValue = valueOrZero(inFinOther);
+  console.log("updating financial health total");
 
-    totalFinExpenses.value = finFeesValue + finDebtValue + savingsValue + stonksValue + finOtherValue;
+  totalFinExpenses.value =
+    finFeesValue + finDebtValue + savingsValue + stonksValue + finOtherValue;
 }
 form.addEventListener("input", updateResultFinancial);
 updateResultFinancial();
 //total Expenses
-const totalExpenses = form.elements["out-expense-summary"]
+const totalExpenses = form.elements["out-expense-summary"];
 
 function updateResultExpenses() {
-    
-    const totalHousing = totalHousingExpenses.valueAsNumber;
-    const totalFood = totalFoodExpenses.valueAsNumber;
-    const totalTranspo = totalTranspoExpenses.valueAsNumber;
-    const totalHealth = totalHealthExpenses.valueAsNumber;
-    const totalLifestyle = totalLifestyleExpenses.valueAsNumber;
-    const totalEducation = totalEduExpenses.valueAsNumber;
-    const totalFinancial = totalFinExpenses.valueAsNumber;
-    console.log("updating expenses")
-    console.log(totalHousing);
-    console.log(totalFood);
-    console.log(totalTranspo);
-    console.log(totalHealth);
-    console.log(totalLifestyle);
-    console.log(totalEducation);
-    console.log(totalFinancial);
+  const totalHousing = Number(totalHousingExpenses.value);
+  const totalFood = Number(totalFoodExpenses.value);
+  const totalTranspo = Number(totalTranspoExpenses.value);
+  const totalHealth = Number(totalHealthExpenses.value);
+  const totalLifestyle = Number(totalLifestyleExpenses.value);
+  const totalEducation = Number(totalEduExpenses.value);
+  const totalFinancial = Number(totalFinExpenses.value);
+  console.log("updating expenses");
+  console.log(totalHousing);
+  console.log(totalFood);
+  console.log(totalTranspo);
+  console.log(totalHealth);
+  console.log(totalLifestyle);
+  console.log(totalEducation);
+  console.log(totalFinancial);
 
-    totalExpenses.value = totalHousing + totalFood + totalTranspo + totalHealth + totalLifestyle + totalEducation + totalFinancial;
+  totalExpenses.value =
+    totalHousing +
+    totalFood +
+    totalTranspo +
+    totalHealth +
+    totalLifestyle +
+    totalEducation +
+    totalFinancial;
 
-    console.log(totalExpenses)
+  console.log(totalExpenses);
 }
 form.addEventListener("input", updateResultExpenses);
 updateResultExpenses();
 
 let income = form.elements["out-income-overall"];
-let expenses = form.elements["out-expenses-overall"];
+let expenses = form.elements["out-expense-overall"];
 const overallDifference = form.elements["out-difference"];
+const overallVerdict = form.elements["out-verdict"];
 
+//takes two numbers and decides what to say about them
+function budgetVerdict(incomeTotal, expenseTotal) {
+  if (incomeTotal === 0) {
+    return "Enter your income to get started";
+  }
+  if (expenseTotal > incomeTotal) {
+    return "Spending more than you earn";
+  }
+  if (expenseTotal === incomeTotal) {
+    return "Breaking even";
+  }
+  return "You have money left over";
+}
 function updateResultOverall() {
-    income.value = totalIncome.valueAsNumber;
-    expenses.value = totalExpenses.valueAsNumber;
-    console.log("updating overall total")
+    const incomeTotal = Number(totalIncome.value);
+    const expenseTotal = Number(totalExpenses.value);
+    console.log("updating overall total")
 
-    overallDifference.value = income - expenses;
+    income.value = incomeTotal;
+    expenses.value = expenseTotal;
+    overallDifference.value = incomeTotal - expenseTotal;
+    overallVerdict.value = budgetVerdict(incomeTotal, expenseTotal);
 }
 form.addEventListener("input", updateResultOverall);
 updateResultOverall();
+
+const expenseChart = new Chart(document.getElementById("myChart"), {
+  type: "doughnut",
+  data: {
+    labels: [
+      "Housing",
+      "Food & Cleaning",
+      "Transportation",
+      "Health",
+      "Personal, Family, & Lifestyle",
+      "Education & Professional",
+      "Financial Health & Other Expenses",
+    ],
+    datasets: [
+      {
+        label: "Expenses",
+        data: [],
+        backgroundColor: [
+                "#2A78D6", // blue - housing
+                "#EB6834", // orange - food
+                "#1BAF7A", // aqua - transportation
+                "#EDA100", // yellow - health
+                "#E87BA4", // magenta - lifestyle
+                "#008300", // green - education
+                "#4A3AA7", // violet - financial
+            ],
+        borderWidth: 2,
+        borderColor: "#fff",
+      },
+    ],
+  },
+  options: {},
+});
+
+function updateChart() {
+  console.log("updating chart");
+
+  expenseChart.data.datasets[0].data = [
+    Number(totalHousingExpenses.value),
+    Number(totalFoodExpenses.value),
+    Number(totalTranspoExpenses.value),
+    Number(totalHealthExpenses.value),
+    Number(totalLifestyleExpenses.value),
+    Number(totalEduExpenses.value),
+    Number(totalFinExpenses.value),
+  ];
+  expenseChart.update();
+}
+form.addEventListener("input", updateChart);
+updateChart();
