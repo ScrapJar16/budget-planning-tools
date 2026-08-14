@@ -29,12 +29,11 @@ h1 {
   align-items: center;
 }
 
-#branded-title-heading {
+/* #branded-title-heading {
   font-family: "../fonts/CinzelDecorative-Regular.ttf";
-}
+} */
 
 .header-logo {
-  background-image: "./budget-goat-circle.png";
   box-shadow: 5px 5px 15px #000;
   border-radius: 15px;
   border: 3px solid #000;
@@ -80,6 +79,7 @@ h1 {
   border: 3px solid #000;
   border-radius: 15px;
   box-shadow: 3px 3px 10px #000;
+
 }
 
 .form-section {
@@ -140,11 +140,11 @@ label.div {
   right: 0.5rem;
 }
 
-.outputBox {
+/* .outputBox {
   background-color: #fff;
   border: 0.5px solid #000;
   min-width: 5%;
-}
+} */
 
 /* #category-totals-box {
     /* display: flex; */
@@ -196,6 +196,10 @@ label.div {
 .input-warning {
   color: #d03b3b;
   font-weight: bold;
+  background-color: #ecba3d;
+  border-radius: 15px;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .input-box-error {

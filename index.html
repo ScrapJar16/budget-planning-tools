@@ -11,10 +11,10 @@
     <main class="main">
       <header class="header">
         <article class="header-box">
-          <h1 id="branded-title-heading">Budget Goat</h1>
+          <h1>Budget Goat</h1>
           <p></p>
           <img
-            src="img/budget-goat-logo-words-removebg-preview.png"
+            src="img/budget-goat-circle.png"
             width="100"
             height="100"
             class="header-logo"
@@ -64,6 +64,7 @@
                                 <label>This Year</label>
                                 <input type="number" value="2026" class="input-box" required><br>
                             </fieldset> -->
+<!--Start of Inputs section-->
               <fieldset id="input-income" class="form-section">
                 <legend class="form-section-title">Income</legend>
                 <label>Wages After Taxes</label>
@@ -88,9 +89,10 @@
                   required
                 /><br />
               </fieldset>
+<!--Start of Expenses Input-->
               <fieldset id="input-expenses" class="form-section">
                 <legend class="form-section-title">Expenses</legend>
-                <p id="input-warning" class="input-warning"></p>
+<!--Housing Costs-->
                 <fieldset id="input=housing" class="form-section">
                   <legend class="form-section-title">Housing</legend>
                   <label>Rent/Mortgage</label>
@@ -140,12 +142,12 @@
                     required
                   /><br />
                 </fieldset>
+<!--Food and Cleaning Costs-->
                 <fieldset
                   id="input-food-cleaning"
                   class="form-section input-section"
                 >
                   <legend class="form-section-title">Food & Cleaning</legend>
-                  <p id="input-warning" class="input-warning"></p>
                   <label>Groceries and household supplies</label>
                   <input
                     type="number"
@@ -174,9 +176,9 @@
                     required
                   /><br />
                 </fieldset>
+<!--Transportation Expenses-->
                 <fieldset id="input-transpo" class="form-section input-section">
                   <legend class="form-section-title">Transportation</legend>
-                  <p id="input-warning" class="input-warning"></p>
                   <label>Public Transportation</label>
                   <input
                     type="number"
@@ -250,9 +252,9 @@
                     required
                   /><br />
                 </fieldset>
+<!--Healthcare expenses-->
                 <fieldset class="form-section input-section">
                   <legend class="form-section-title">Health</legend>
-                  <p id="input-warning" class="input-warning"></p>
                   <label>Health Insurance</label>
                   <input
                     type="number"
@@ -290,11 +292,11 @@
                     required
                   /><br />
                 </fieldset>
+<!--Lifestyle Expenses-->
                 <fieldset class="form-section input-section">
                   <legend class="form-section-title">
                     Personal, family maintenece, & lifestyle
                   </legend>
-                  <p id="input-warning" class="input-warning"></p>
                   <label>Childcare (daycare, babysitting, etc.)</label>
                   <input
                     type="number"
@@ -383,11 +385,11 @@
                     required
                   /><br />
                 </fieldset>
+<!--Educational and Professional Expenses-->
                 <fieldset class="form-section input-section">
                   <legend class="form-section-title">
                     Education & Professional
                   </legend>
-                  <p id="input-warning" class="input-warning"></p>
                   <label>Student Loans</label>
                   <input
                     type="number"
@@ -425,11 +427,11 @@
                     required
                   /><br />
                 </fieldset>
+<!--Financial and Other expenses-->
                 <fieldset class="form-section input-section">
                   <legend class="form-section-title">
                     Financial Health & Other Expenses
                   </legend>
-                  <p id="input-warning" class="input-warning"></p>
                   <label>Bank account/credit card fees</label>
                   <input
                     type="number"
@@ -478,10 +480,12 @@
                 </fieldset>
               </fieldset>
             </section>
+<!--Buttons-->
             <section class="button-box">
               <!-- <input type="submit" value="Calculate" class="button"> -->
               <input type="reset" value="Reset Inputs" class="button" />
             </section>
+<!--Outputs section-->
             <section class="input-output-grouping">
               <h2 class="form-header">Outputs</h2>
               <fieldset class="form-section">
@@ -495,49 +499,49 @@
                     class="outputBox"
                   ></output
                   ><br />
-                  <label>Housing</label>
+                  <label>Housing:   </label>
                   <output
                     id="out-house-total"
                     name="out-house-total"
                     class="outputBox"
                   ></output
                   ><br />
-                  <label>Food & Cleaning</label>
+                  <label>Food & Cleaning: </label>
                   <output
                     id="out-food-total"
                     name="out-food-total"
                     class="outputBox"
                   ></output
                   ><br />
-                  <label>Transportation</label>
+                  <label>Transportation: </label>
                   <output
                     id="out-transpo-total"
                     name="out-transpo-total"
                     class="outputBox"
                   ></output
                   ><br />
-                  <label>Health</label>
+                  <label>Health: </label>
                   <output
                     id="out-hlth-total"
                     name="out-hlth-total"
                     class="outputBox"
                   ></output
                   ><br />
-                  <label>Personal, Family, & Lifestyle</label>
+                  <label>Personal, Family, & Lifestyle: </label>
                   <output
                     id="out-life-total"
                     name="out-life-total"
                     class="outputBox"
                   ></output
                   ><br />
-                  <label>Education & Professional</label>
+                  <label>Education & Professional: </label>
                   <output
                     id="out-edu-total"
                     name="out-edu-total"
                     class="outputBox"
                   ></output
                   ><br />
-                  <label>Financial Health & Other Expenses</label>
+                  <label>Financial Health & Other Expenses: </label>
                   <output
                     id="out-fin-total"
                     name="out-fin-total"
@@ -551,6 +555,7 @@
                     class="outputBox"
                   ></output>
                 </fieldset>
+<!--Overall Summary-->
                 <fieldset class="form-section" id="display-overall-total">
                   <legend class="form-section-title">Overall Total</legend>
                   <label><strong>Income</strong></label>
@@ -590,6 +595,7 @@
                     <canvas id="myChart"></canvas>
                   </div>
                 </fieldset>
+<!--Other Tips-->
                 <fieldset class="form-section">
                   <legend class="form-section-title">Things to Consider</legend>
                   <section>
@@ -610,10 +616,6 @@
                       ensure you will have funds to cover those expenses when
                       you need them.
                     </p>
-                    <!-- <p>
-                                            Something here about how recommendations are to keep your housing expenses within a certian percentage of income.
-                                            Maybe a way to flag if their totals are above that, but save that rabbit hole for later!
-                                        </p> -->
                   </section>
                 </fieldset>
               </fieldset>
@@ -623,9 +625,6 @@
       </article>
       <footer class="footer">
         <p>
-          Madilyn Jarman as part of the Code: You Web Development course, 2026
-        </p>
-        <p>
           <img
             src="img/budget-goat-logo-words-removebg-preview.png"
             width="100"
@@ -634,6 +633,9 @@
             id="footer-logo"
             name="footer-logo"
           />
+        </p>
+        <p>
+          Madilyn Jarman as part of the Code: You Web Development course, 2026
         </p>
       </footer>
     </main>
